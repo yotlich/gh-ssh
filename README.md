@@ -1,5 +1,11 @@
 # GitHub SSH
 
+## Create config dir
+
+```powershell
+ni -f -i dir $env:USERPROFILE\.ssh
+```
+
 ## Generate auth key
 
 ```powershell
