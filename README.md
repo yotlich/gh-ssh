@@ -1,12 +1,16 @@
 # GitHub SSH
 
-## Create config dir
+Windows PowerShell
+
+## Global configuration
+
+### Create config dir
 
 ```powershell
 ni -f -i dir $env:USERPROFILE\.ssh
 ```
 
-## Generate auth key
+### Generate auth key
 
 ```powershell
 ssh-keygen -t ed25519 `
@@ -16,7 +20,7 @@ ssh-keygen -t ed25519 `
   Set-Clipboard
 ```
 
-## Enable config
+### Enable config
 
 ```powershell
 Write-Output @'
@@ -30,7 +34,7 @@ Host github.com
 '@ | Out-File -a -e ascii $env:USERPROFILE\.ssh\config
 ```
 
-## Generate sign key
+### Generate sign key
 
 ```powershell
 ssh-keygen -t ed25519 `
@@ -42,9 +46,13 @@ ssh-keygen -t ed25519 `
 
 ## Setup repository
 
+### New
+
 ```powershell
 git init
 ```
+
+### Config
 
 ```powershell
 git config user.name 'yotlich'
@@ -56,7 +64,7 @@ git config tag.gpgSign true
 
 ```
 
-## Add remote
+### Add remote
 
 ```powershell
 git branch -M main
