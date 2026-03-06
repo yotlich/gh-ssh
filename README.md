@@ -7,7 +7,7 @@ Windows PowerShell
 ### Create config dir
 
 ```powershell
-ni -f -i dir $env:USERPROFILE\.ssh
+mkdir -f $env:USERPROFILE\.ssh
 ```
 
 ### Generate auth key
