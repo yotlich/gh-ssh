@@ -7,16 +7,16 @@ Windows PowerShell
 ### Create config dir
 
 ```powershell
-mkdir -f $env:USERPROFILE\.ssh
+mkdir -f $Home\.ssh
 ```
 
 ### Generate auth key
 
 ```powershell
 ssh-keygen -t ed25519 `
-  -f $env:USERPROFILE\.ssh\github-com.key `
+  -f $Home\.ssh\github-com.key `
   -C "$env:USERNAME@$env:COMPUTERNAME"; `
-  cat $env:USERPROFILE\.ssh\github-com.key.pub |
+  cat $Home\.ssh\github-com.key.pub |
   Set-Clipboard
 ```
 
@@ -31,16 +31,16 @@ Host github.com
     IdentitiesOnly yes
     PreferredAuthentications publickey
     PasswordAuthentication no
-'@ | Out-File -a -e ascii $env:USERPROFILE\.ssh\config
+'@ | Out-File -a -e ascii $Home\.ssh\config
 ```
 
 ### Generate sign key
 
 ```powershell
 ssh-keygen -t ed25519 `
-  -f $env:USERPROFILE\.ssh\github-com.sign.key `
+  -f $Home\.ssh\github-com.sign.key `
   -C "$env:USERNAME@$env:COMPUTERNAME"; `
-  cat $env:USERPROFILE\.ssh\github-com.sign.key.pub |
+  cat $Home\.ssh\github-com.sign.key.pub |
   Set-Clipboard
 ```
 
