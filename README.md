@@ -49,6 +49,7 @@ ssh-keygen -t ed25519 `
 ```powershell
 git config --global core.autocrlf false
 git config --global core.eol lf
+
 ```
 
 ## Setup repository
